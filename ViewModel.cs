@@ -12,15 +12,15 @@ namespace WpfApp1
     public class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public CommandBinding Bind;
+        public CommandBinding bind;
         public RoutedCommand Command { get; set; } = new RoutedCommand();
         private static int CBIndex = -1;
         private bool CheckStart = true;
 
         public ViewModel()
         {
-            Bind = new CommandBinding(Command);
-            Bind.Executed += Command_Executed;
+            bind = new CommandBinding(Command);
+            bind.Executed += Command_Executed;
         }
 
         public void Command_Executed(object sender, ExecutedRoutedEventArgs e)
